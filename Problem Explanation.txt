@@ -1,0 +1,25 @@
+The problem  involves an undirected graph with weighted edges. The graph has N vertices numbered from 1 to N. For any pair of vertices u and v (where u ≠ v), there is an edge between u and v if and only if u divides v. The weight of this edge is denoted by u/v.
+
+The input consists of T test cases. Each test case begins with a line containing two integers N and Q, where N is the number of vertices in the graph and Q is the number of queries to be answered. Following that, there are Q lines, each containing two integers u and v representing a query.
+
+The goal is to find the minimum distance between the vertices u and v for each query.
+
+To solve this problem, you need to perform the following steps:
+
+1. Read the number of test cases, T.
+
+2. For each test case, do the following:
+   a. Read the values of N and Q.
+   b. Create the graph with N vertices and weighted edges according to the given conditions.
+   c. Perform the following steps for each query:
+      - Read the values of u and v.
+      - Implement a shortest path algorithm (such as Dijkstra's algorithm or Breadth-First Search) to find the minimum distance between u and v in the graph.
+      - Print the minimum distance.
+
+4. Repeat steps 2b-2c for each test case.
+
+5. End the program after processing all test cases.
+
+The output should be the minimum distances for each query in each test case.
+
+Note: You can optimize the creation of the graph by precomputing the weights for each pair of vertices before processing the queries.
