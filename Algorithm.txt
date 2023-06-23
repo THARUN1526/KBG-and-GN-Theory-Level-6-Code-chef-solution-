@@ -1,0 +1,27 @@
+Let's break down the code and explain its algorithm step by step:
+
+1. The function `hel2(x, y)` is defined to calculate the minimum distance between two vertices `x` and `y` in the graph. This function first checks if `x` is equal to `y`, in which case the minimum distance is 0.
+
+2. Next, an empty list `l` is initialized to store the divisors of `x`. The loop iterates from 1 to the square root of `x` (inclusive) and checks if `i` is a divisor of `x` using the condition `x % i == 0`. If `i` is a divisor, both `i` and `x // i` (the other divisor) are added to the list `l`. However, if `i` is the square root of `x`, it is added twice, so the duplicate entry is removed using `l.pop()`.
+
+3. The list `l` is sorted in reverse order. This step is not necessary for finding the minimum distance, but it might be used for some other purposes.
+
+4. The variable `cnt` is initialized to 0, which will keep track of the minimum distance. The variable `prev` is set to `x` initially.
+
+5. The loop iterates through the elements of `l` from the second element (`i = 1`) to the end. For each element, it checks if `prev` is divisible by `l[i]` and `l[i]` is divisible by `y`. If both conditions are true, it adds `prev // l[i]` to `cnt`, updates `prev` to `l[i]`, and checks if `l[i]` is equal to `y`. If `l[i]` is equal to `y`, it breaks the loop since the minimum distance is found.
+
+6. Finally, the function returns the value of `cnt`, which represents the minimum distance between `x` and `y` in the graph.
+
+7. The function `gcd(x, y)` calculates the greatest common divisor between `x` and `y` using the Euclidean algorithm. It returns the GCD value.
+
+8. The function `fun(n, u, v)` takes three parameters: `n` (number of vertices), `u` (query vertex), and `v` (query vertex). It calculates the GCD of `u` and `v` using the `gcd` function. Then, it calls the `hel2` function twice, passing `u` and the GCD as arguments in the first call, and `v` and the GCD as arguments in the second call. The results are stored in `res1` and `res2`, respectively. Finally, it adds `res1` and `res2` together and returns the result.
+
+9. The main code starts by reading the number of test cases, `T`, from the input. Then, it enters a loop that iterates `T` times.
+
+10. For each test case, it reads the values of `n` and `q` (number of vertices and number of queries) from the input.
+
+11. Inside the nested loop that iterates `q` times, it reads the values of `u` and `v` (vertices corresponding to the query) from the input.
+
+12. It calls the `fun` function, passing `n`, `u`, and `v` as arguments, and prints the result.
+
+The overall algorithm seems to calculate the minimum distance between vertices `u` and `v` in the given graph based on the provided conditions and the concept of
