@@ -1,0 +1,28 @@
+let's break it down into its main components:
+
+1. The `hel2` function:
+   - The loop from 1 to the square root of `x` iterates O(sqrt(x)) times.
+   - Inside the loop, the conditions `x % i == 0` and `l.pop()` take constant time.
+   - Sorting the list `l` takes O(sqrt(x) log(sqrt(x))) time.
+   - The second loop from 1 to the length of `l` also iterates O(sqrt(x)) times.
+   - Inside this loop, the conditions and operations take constant time.
+   - Therefore, the overall time complexity of the `hel2` function is O(sqrt(x) log(sqrt(x))).
+
+2. The `gcd` function:
+   - The Euclidean algorithm for calculating the GCD of `x` and `y` takes O(log(min(x, y))) time.
+   - Therefore, the time complexity of the `gcd` function is O(log(min(x, y))).
+
+3. The `fun` function:
+   - The time complexity of calling `hel2` twice is dominated by the largest input value passed to it, which is the GCD of `u` and `v`.
+   - Therefore, the time complexity of the `fun` function is determined by the time complexity of the `hel2` function, which is O(sqrt(max(u, v)) log(sqrt(max(u, v)))).
+
+4. The main loop:
+   - The loop that iterates over the test cases runs T times.
+   - For each test case, the loop that iterates over the queries runs q times.
+   - The overall time complexity of the main loop is O(T * q).
+
+Considering all the components, the total time complexity of the code can be approximated as follows:
+
+O(T * q * sqrt(max(u, v)) log(sqrt(max(u, v))))
+
+It's important to note that this analysis assumes that the operations inside the loops and function calls take constant time. If the values of `n`, `u`, and `v` become significantly large, the actual time complexity might be higher due to the calculations involved in the loops and function calls.
